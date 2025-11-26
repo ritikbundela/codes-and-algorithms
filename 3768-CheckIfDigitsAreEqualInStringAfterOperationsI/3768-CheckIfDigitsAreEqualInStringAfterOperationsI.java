@@ -1,0 +1,15 @@
+// Last updated: 26/11/2025, 22:29:34
+class Solution {
+    public boolean hasSameDigits(String s) {
+        int iteration = 0;
+        char [] arr = s.toCharArray();
+
+        while((arr.length - iteration) != 2){
+            for(int i = 0; i < arr.length -1; i++){
+                arr[i] = (char)(((arr[i] - '0') + (arr[i+1] - '0')) % 10 + '0');
+            }
+            iteration++;
+        }
+        return arr[0] == arr[1];
+    }
+}
